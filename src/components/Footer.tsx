@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center gap-2">
               <img
-                src="https://amani-project.vercel.app/amani-logo.jpg"
+                src="https://amani-landing-page.vercel.app/amani-logo.jpg"
                 alt="شعار إشراقة أم"
                 className="w-12 h-12 object-contain rounded-xl shadow"
                 style={{ background: 'white' }}
