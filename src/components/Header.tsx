@@ -16,41 +16,47 @@ const Header = () => {
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 border-b">
       <div className="w-full px-3">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 w-full">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-                <img
-                  src="/last-version-logo.jpg"
-                  className="h-full w-auto max-h-16 object-contain"
-                  style={{ background: 'transparent', boxShadow: 'none' }}
-                />
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <img
+              src="/last-version-logo.jpg"
+              className="h-full w-auto max-h-16 object-contain"
+              style={{ background: 'transparent', boxShadow: 'none' }}
+            />
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          {/* Desktop Navigation Centered */}
+          <div className="flex-1 flex justify-center">
+            <nav className="hidden md:flex items-center gap-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
           {/* Auth Buttons */}
-          <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="sm">
-              تسجيل دخول
-            </Button>
-            <Button 
-              size="sm" 
-              className="bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity"
-            >
-              إنشاء حساب
-            </Button>
-          </div>
+          {/* <div className="hidden md:flex items-center gap-3">
+            <Link to="/login">
+              <Button variant="ghost" size="sm">
+                تسجيل دخول
+              </Button>
+            </Link>
+            <Link to="/register">
+              <Button 
+                size="sm" 
+                className="bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity"
+              >
+                إنشاء حساب
+              </Button>
+            </Link>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <Button
@@ -78,15 +84,19 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex flex-col gap-2 px-2 pt-4 border-t">
-                <Button variant="ghost" size="sm">
-                  تسجيل دخول
-                </Button>
-                <Button 
-                  size="sm" 
-                  className="bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity"
-                >
-                  إنشاء حساب
-                </Button>
+                {/* <Link to="/login" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="ghost" size="sm" className="w-full">
+                    تسجيل دخول
+                  </Button>
+                </Link>
+                <Link to="/register" onClick={() => setIsMenuOpen(false)}>
+                  <Button 
+                    size="sm" 
+                    className="bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity w-full"
+                  >
+                    إنشاء حساب
+                  </Button>
+                </Link> */}
               </div>
             </nav>
           </div>

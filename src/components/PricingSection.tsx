@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Crown, Sparkles, Users } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const courses = [
 	{
@@ -90,9 +91,12 @@ function PricingSection() {
 								) : (
 									<>
 										<span className="text-lg font-bold text-foreground mb-1">{course.price} ريال</span>
+										<Link to="/payment" className="w-full">
+										
 										<Button className="w-full bg-gradient-to-r from-primary to-accent" size="lg">
 											شراء الدورة
 										</Button>
+										</Link>
 									</>
 								)}
 							</div>

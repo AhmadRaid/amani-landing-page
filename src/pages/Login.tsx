@@ -3,12 +3,30 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowRight, Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.email || !form.password) {
+      setError("يرجى إدخال البريد الإلكتروني وكلمة المرور");
+    } else {
+      setError("");
+      // منطق وهمي فقط
+      alert("تم تسجيل الدخول بنجاح!");
+    }
+  };
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex m-10">
       {/* Left Side - Login Form */}
       <div className="flex-1 flex items-center justify-center p-8 bg-background">
         <div className="w-full max-w-md space-y-8">
@@ -28,17 +46,21 @@ const Login = () => {
           </div>
 
           {/* Login Form */}
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             {/* Email Field */}
             <div className="space-y-2">
               <Label htmlFor="email" className="text-right block">البريد الإلكتروني</Label>
               <div className="relative">
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="أدخل بريدك الإلكتروني"
                   className="pl-10 text-right"
                   dir="rtl"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
                 />
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               </div>
@@ -50,10 +72,14 @@ const Login = () => {
               <div className="relative">
                 <Input
                   id="password"
+                  name="password"
                   type={showPassword ? "text" : "password"}
                   placeholder="أدخل كلمة المرور"
                   className="pl-10 pr-10 text-right"
                   dir="rtl"
+                  value={form.password}
+                  onChange={handleChange}
+                  required
                 />
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <button
@@ -77,17 +103,17 @@ const Login = () => {
               </label>
             </div>
 
-            {/* Login Button */}
-            <Button 
-              type="submit" 
-              className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity"
-              size="lg"
-            >
-              تسجيل الدخول
-              <ArrowRight className="mr-2 h-4 w-4" />
-            </Button>
+            {/* Error Message */}
+            {error && <div className="text-red-600 font-bold text-center">{error}</div>}
 
-            {/* Divider */}
+            {/* Login Button */}
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity py-3 rounded-xl font-bold text-white text-lg"
+            >
+              دخول
+            </button>
+
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
                 <span className="w-full border-t" />
@@ -103,7 +129,6 @@ const Login = () => {
                 <div className="w-5 h-5 ml-2">🔍</div>
                 تسجيل الدخول بحساب جوجل
               </Button>
-              
               <Button variant="outline" className="w-full" size="lg">
                 <div className="w-5 h-5 ml-2">📘</div>
                 تسجيل الدخول بحساب فيسبوك
@@ -113,9 +138,9 @@ const Login = () => {
             {/* Sign Up Link */}
             <p className="text-center text-muted-foreground">
               ليس لديك حساب؟{" "}
-              <a href="/signup" className="text-primary font-medium hover:underline">
+              <Link to="/register" className="text-primary font-bold hover:underline">
                 إنشاء حساب جديد
-              </a>
+              </Link>
             </p>
           </form>
         </div>

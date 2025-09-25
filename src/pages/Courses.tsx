@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 // تعريف أنواع الدورات
 interface FreeCourse {
@@ -75,8 +76,8 @@ const Courses: React.FC = () => {
   return (
     <main className="relative min-h-screen w-full pt-32 pb-16 px-2 sm:px-6 bg-gradient-to-br from-background via-secondary/10 to-accent/10 animate-fade-in-up">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-10 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent drop-shadow-lg">الدورات التدريبية الكاملة</h1>
-        <div className="flex justify-center mb-10 gap-4">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent drop-shadow-lg">الدورات التدريبية الكاملة</h1>
+        <div className="flex justify-center mb-10 gap-4 ">
           <button
             className={`px-7 py-2.5 rounded-full font-bold text-lg shadow transition-all duration-200 border-2 ${activeTab === 'free' ? 'bg-gradient-to-r from-green-400 to-green-600 text-white border-green-500 scale-105' : 'bg-white/80 text-green-700 border-green-200 hover:bg-green-50'}`}
             onClick={() => setActiveTab('free')}
@@ -103,15 +104,21 @@ const Courses: React.FC = () => {
                 {activeTab === 'paid' && (
                   <p className="text-lg font-semibold mb-4 text-accent">السعر: {(course as PaidCourse).price}</p>
                 )}
-                <button
-                  className={
-                    activeTab === 'free'
-                      ? "w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-2.5 rounded-xl font-bold shadow"
-                      : "w-full bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-white py-2.5 rounded-xl font-bold shadow"
-                  }
-                >
-                  {activeTab === 'free' ? 'دخول الدورة' : 'شراء الدورة'}
-                </button>
+                {activeTab === 'free' ? (
+                  <button
+                    className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-2.5 rounded-xl font-bold shadow"
+                  >
+                    دخول الدورة
+                  </button>
+                ) : (
+                  <Link to="/payment" className="w-full">
+                    <button
+                      className="w-full bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-white py-2.5 rounded-xl font-bold shadow"
+                    >
+                      شراء الدورة
+                    </button>
+                  </Link>
+                )}
               </div>
             ))}
           </div>
