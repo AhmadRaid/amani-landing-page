@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-secondary/20 to-accent/10">
+  <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-secondary/20 to-accent/10 animate-fade-in-right">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl"></div>
@@ -12,7 +12,7 @@ const HeroSection = () => {
         <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-lg"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className=" mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-right space-y-8">
@@ -73,25 +73,14 @@ const HeroSection = () => {
           </div>
 
           {/* Right Image */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Main Image Container */}
-              <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center shadow-card">
-                <div className="w-64 h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center">
-                  <div className="w-48 h-48 lg:w-64 lg:h-64 bg-white rounded-full flex items-center justify-center shadow-soft">
-                    {/* Placeholder for online learning image */}
-                    <div className="text-6xl">�</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center shadow-soft animate-bounce">
-                <span className="text-white text-lg">🎓</span>
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center shadow-soft">
-                <span className="text-white text-xl">📚</span>
-              </div>
+          <div className="w-full flex justify-center items-center">
+            <div className="relative w-full max-w-3xl h-[500px] md:h-[650px] lg:h-[750px] overflow-hidden flex items-center justify-center">
+              <img
+                src="/vector.png"
+                alt="Online Learning"
+                className="w-full h-full object-contain mix-blend-multiply opacity-90"
+                style={{ background: 'none' }}
+              />
             </div>
           </div>
         </div>

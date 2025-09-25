@@ -11,7 +11,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
-      <main className="flex-1 w-full px-4 sm:px-8 md:px-16 xl:px-32 2xl:px-64 max-w-[1800px] mx-auto">
+      <main className="flex-1 w-full px-4  max-w-[1800px] mx-auto">
         <HeroSection />
         {/* قسم تعريفي عن المنصة */}
         <section className="max-w-3xl mx-auto text-center my-12 px-2 sm:px-4">

@@ -11,8 +11,8 @@ const CTASection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
-      <div className="container mx-auto px-4">
+  <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5 animate-fade-in-right">
+      <div className="mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
@@ -64,17 +64,13 @@ const CTASection = () => {
 
           {/* Right Image */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Main Image Container */}
-              <div className="w-80 h-96 lg:w-96 lg:h-[28rem] bg-gradient-to-br from-accent/20 to-primary/20 rounded-3xl flex items-center justify-center shadow-card">
-                <div className="w-64 h-80 lg:w-80 lg:h-96 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center">
-                  <div className="w-48 h-64 lg:w-64 lg:h-80 bg-white rounded-xl flex items-center justify-center shadow-soft">
-                    {/* Placeholder for online teacher image */}
-                    <div className="text-8xl">🧑‍🏫</div>
-                  </div>
-                </div>
-              </div>
-
+            <div className="relative flex flex-col items-center justify-center">
+              <img
+                src="/vector.png"
+                alt="مدرب أونلاين"
+                className="w-72 h-96 lg:w-[28rem] lg:h-[32rem] object-contain drop-shadow-2xl rounded-3xl border-4 border-white/70 bg-white/60"
+                style={{ boxShadow: '0 8px 32px 0 rgba(80,80,120,0.18)' }}
+              />
               {/* Floating Elements */}
               <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-soft">
                 <div className="flex items-center gap-2">
@@ -85,7 +81,7 @@ const CTASection = () => {
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-soft">
                 <div className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-primary" />
-                  <span className="text-sm font-bold">+5000 متعلم</span>
+                  <span className="text-sm font-bold">+500 متعلم</span>
                 </div>
               </div>
             </div>

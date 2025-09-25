@@ -32,8 +32,8 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background to-secondary/20">
-      <div className="container mx-auto px-4">
+  <section className="py-20 bg-gradient-to-br from-background to-secondary/20 animate-fade-in-up">
+      <div className="  px-4">
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {features.map((feature, index) => (
@@ -76,8 +76,12 @@ const FeaturesSection = () => {
               <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl flex items-center justify-center shadow-card">
                 <div className="w-64 h-64 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center">
                   <div className="w-48 h-48 bg-white rounded-xl flex items-center justify-center shadow-soft">
-                    {/* Placeholder for online student */}
-                    <div className="text-6xl">🧑‍�</div>
+                    {/* صورة توضيحية */}
+                    <img
+                      src="/vector.png"
+                      alt="vector graphic"
+                      className="w-40 h-40 object-contain"
+                    />
                   </div>
                 </div>
               </div>

@@ -29,8 +29,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-muted/50 to-background border-t">
-      <div className="container mx-auto px-4">
+  <footer className="bg-gradient-to-br from-muted/50 to-background border-t animate-fade-in-left">
+      <div className=" mx-auto px-4">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-16">
           {/* Brand Section */}

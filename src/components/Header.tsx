@@ -15,19 +15,15 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 border-b">
-      <div className="container mx-auto px-4">
+      <div className="w-full px-3">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
                 <img
-                  src="https://amani-landing-page.vercel.app/amani-logo.jpg"
-                  alt="شعار إشراقة أم"
-                  className="w-12 h-12 object-contain rounded-lg shadow"
-                  style={{ background: 'white' }}
+                  src="/last-version-logo.jpg"
+                  className="h-full w-auto max-h-16 object-contain"
+                  style={{ background: 'transparent', boxShadow: 'none' }}
                 />
-                <span className="font-bold text-lg text-primary">
-                  إشراقة أم
-                </span>
           </div>
 
           {/* Desktop Navigation */}

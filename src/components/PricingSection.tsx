@@ -6,7 +6,7 @@ const courses = [
 		name: "أساسيات تربية الأطفال",
 		description: "دورة مجانية حول المبادئ الأساسية لتربية الأطفال بشكل إيجابي.",
 		price: 0,
-		image: "/placeholder.svg",
+		image: "/كورس4.jpeg",
 		features: ["شهادة مجانية", "دروس فيديو", "مجتمع تفاعلي"],
 		isFree: true
 	},
@@ -14,7 +14,7 @@ const courses = [
 		name: "مهارات الأم القيادية",
 		description: "دورة مدفوعة تركز على تطوير مهارات القيادة للأمهات.",
 		price: 120,
-		image: "/placeholder.svg",
+		image: "/كورس3.jpeg",
 		features: ["شهادة معتمدة", "دروس فيديو متقدمة", "دعم فني"],
 		isFree: false
 	},
@@ -22,7 +22,7 @@ const courses = [
 		name: "التغذية الصحية للأطفال",
 		description: "دورة مدفوعة عن أساسيات التغذية الصحية للأطفال.",
 		price: 90,
-		image: "/placeholder.svg",
+		image: "/كورس2.jpeg",
 		features: ["ملفات PDF", "محاضرات فيديو", "مجتمع خاص"],
 		isFree: false
 	},
@@ -30,7 +30,7 @@ const courses = [
 		name: "دورة التسويق الرقمي",
 		description: "دورة مدفوعة عن أساسيات التسويق والاعلانات الممولة.",
 		price: 90,
-		image: "/placeholder.svg",
+		image: "/كورس1.jpeg",
 		features: ["ملفات PDF", "محاضرات فيديو", "مجتمع خاص"],
 		isFree: false
 	}
@@ -38,8 +38,8 @@ const courses = [
 
 function PricingSection() {
 	return (
-		<section className="py-20 bg-gradient-to-br from-background via-secondary/10 to-accent/5">
-			<div className="container mx-auto px-4">
+		<section className=" bg-gradient-to-br from-background via-secondary/10 to-accent/5 animate-fade-in-up">
+			<div className="">
 				{/* Section Header */}
 				<div className="text-center mb-16">
 					<h2 className="text-3xl lg:text-4xl font-bold mb-4">
@@ -54,7 +54,7 @@ function PricingSection() {
 				</div>
 
 				{/* Courses Grid */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 ">
 					{courses.map((course, idx) => (
 						<div
 							key={idx}
