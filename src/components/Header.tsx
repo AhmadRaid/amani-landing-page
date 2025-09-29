@@ -16,33 +16,31 @@ const Header = () => {
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 border-b">
       <div className="w-full px-3">
-        <div className="flex items-center justify-between h-16 w-full">
+        <div className="relative flex items-center h-16 w-full">
           {/* Logo */}
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <div className="flex items-center gap-2 flex-shrink-0 z-10">
             <img
-              src="/last-version-logo.jpg"
+              src="/logo-without-bg.png"
               className="h-full w-auto max-h-16 object-contain"
               style={{ background: 'transparent', boxShadow: 'none' }}
             />
           </div>
 
-          {/* Desktop Navigation Centered */}
-          <div className="flex-1 flex justify-center">
-            <nav className="hidden md:flex items-center gap-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
+          {/* Desktop Navigation Centered Absolutely */}
+          <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                to={item.href}
+                className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
           {/* Auth Buttons */}
-          {/* <div className="hidden md:flex items-center gap-3">
+          {/* <div className="hidden md:flex items-center gap-3 absolute right-4 top-1/2 -translate-y-1/2 z-10">
             <Link to="/login">
               <Button variant="ghost" size="sm">
                 تسجيل دخول
