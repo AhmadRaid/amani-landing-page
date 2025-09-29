@@ -3,22 +3,25 @@ import { Star, Quote } from "lucide-react";
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "محمد علي",
-      text: "منصة رائعة! استفدت كثيرًا من دورة تطوير الويب، والمدرب كان محترفًا جدًا. أنصح الجميع بالتجربة.",
+      name: "أمل الحربي",
+      text: "دورة التصميم كانت نقطة تحول في مسيرتي. تعلمت أساسيات التصميم الاحترافي وكيفية استخدام الأدوات الحديثة. الشكر للمدربة على الشرح الواضح والدعم المستمر.",
       rating: 5,
-      avatar: "�‍💻"
+      image: "/صورة سعودية.jpeg",
+      postition: "متدربة في دورة التصميم"
     },
     {
-      name: "سارة إبراهيم",
-      text: "الدورات منظمة والمحتوى واضح وسهل الفهم. حصلت على شهادة معتمدة بعد إنهاء دورة التصميم.",
+      name: "سلمان المطيري",
+      text: "دورة التسويق الرقمي من أفضل الدورات التي حضرتها. المحتوى غني بالأمثلة العملية، والمدرب يشارك أسرار السوق السعودي. أنصح بها كل من يريد تطوير عمله.",
       rating: 5,
-      avatar: "👩‍🎨"
+      image: "/صورة سعودي 1.jpeg",
+      postition: "متدرب في دورة التسويق الرقمي"
     },
     {
-      name: "أحمد يوسف",
-      text: "أعجبني التفاعل مع المدربين وسرعة الرد على الاستفسارات. منصة تعليمية متكاملة فعلاً.",
+      name: "محمد بن عبدالعزيز",
+      text: "استفدت كثيرًا من دورة التسويق عبر السوشيال ميديا. أصبحت أستطيع إدارة الحملات الإعلانية بنفسي وأحقق نتائج ملموسة. شكراً للمنصة على هذا المستوى العالي.",
       rating: 5,
-      avatar: "🧑‍🏫"
+      image: "/صورة سعودي 6.jpeg",
+      postition: "متدرب في دورة التسويق"
     }
   ];
 
@@ -63,26 +66,23 @@ const TestimonialsSection = () => {
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center">
-                  <span className="text-2xl">{testimonial.avatar}</span>
+                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-primary shadow-soft flex items-center justify-center bg-white">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <p className="font-bold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">متدرب في المنصة</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.postition}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom Decorative Element */}
-        <div className="flex justify-center mt-16">
-          <div className="flex items-center gap-4">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-            <div className="w-3 h-3 bg-accent rounded-full animate-pulse delay-100"></div>
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-200"></div>
-          </div>
-        </div>
+  
       </div>
     </section>
   );
